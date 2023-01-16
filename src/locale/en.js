@@ -5791,6 +5791,7 @@ export default {
         }
     },
     toolbar: {
+        file: 'File Operations',
         undo: 'Undo',
         redo: 'Redo',
         paintFormat: 'Paint format',
@@ -6088,20 +6089,27 @@ export default {
         ChileanPeso:'Chilean Peso',
         CFAFrancBEAC:'CFA Franc BEAC'
     },
+    defaultFile:[
+        { "text": 'New', "value": "newFile", "example": "" },
+        { "text": "", "value": "split", "example": "" },
+        // { "text": 'Open', "value": "openFromServer", "example": "" },
+        { "text": 'Open from Local', "value": "openFromLocal", "example": "" },
+        { "text": "", "value": "split", "example": "" },
+        // { "text": 'Save', "value": "saveToServer", "example": "" },
+        { "text": 'Save to Local', "value": "saveToLocale", "example": "" },
+        { "text": "", "value": "split", "example": "" },
+        { "text": 'Share', "value": "share", "example": "" }
+    ],
     defaultFmt:[
         { "text": 'Automatic', "value": "General", "example": "" },
         { "text": 'Plain text', "value": "@", "example": "" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Number', "value": "##0.00", "example": "1000.12" },
+        { "text": 'Number', "value": "#,##0.00", "example": "1,000.12" },
         { "text": 'Percent', "value": "#0.00%", "example": "12.21%" },
         { "text": 'Scientific', "value": "0.00E+00", "example": "1.01E+5" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Accounting', "value": "¥(0.00)", "example": "¥(1200.09)" },
-
-
-        { "text": 'Currency', "value": "¥0.00", "example": "¥1200.09" },
-
-
+        { "text": 'Accounting', "value": "$#,##0.00)", "example": "$(1,200.09)" },
+        { "text": 'Currency', "value": "$#,##0.00", "example": "$1,200.09" },
         { "text": "", "value": "split", "example": "" },
         { "text": 'Date', "value": "yyyy-MM-dd", "example": "2017-11-29" },
         { "text": 'Time', "value": "hh:mm AM/PM", "example": "3:00 PM" },

@@ -117,6 +117,45 @@ const menuButton = {
     initialMenuButton: function(){
         let _this = this;
 
+        // Open file options
+        $("#luckysheet-icon-file").click(function(){
+            const _locale = locale();
+            const locale_defaultFile = _locale.defaultFile;
+
+            let menuButtonId = $(this).attr("id")+"-menuButton";
+            let $menuButton = $("#" + menuButtonId);
+            
+            if($menuButton.length == 0){
+                let itemdata = locale_defaultFile;
+
+                let itemset = _this.createButtonMenu(itemdata);
+
+                // luckysheet-menuButton-sub
+                let menu = replaceHtml(_this.menu, {"id": "file", "item": itemset, "subclass": "", "sub": ""});
+
+                $("body").append(menu);
+                $menuButton = $("#" + menuButtonId).width(200);
+
+                $menuButton.find(".luckysheet-cols-menuitem").click(function(){
+                    $menuButton.hide();
+                    luckysheetContainerFocus();
+
+                    let $t = $(this), itemvalue = $t.attr("itemvalue"),itemname = $t.attr("itemname");
+                    const event = new CustomEvent('fileOperation', {'detail': itemvalue})
+                    window.dispatchEvent(event);
+                });
+            }
+
+            let userlen = $(this).outerWidth();
+            let tlen = $menuButton.outerWidth();
+
+            let menuleft = $(this).offset().left;
+            if(tlen > userlen && (tlen + menuleft) > $("#" + Store.container).width()){
+                menuleft = menuleft - tlen + userlen;
+            }
+            mouseclickposition($menuButton, menuleft, $(this).offset().top+25, "lefttop");
+        });
+
         //格式刷
         $("#luckysheet-icon-paintformat").click(function(e){
             // *如果禁止前台编辑，则中止下一步操作
@@ -264,7 +303,7 @@ const menuButton = {
         $("#luckysheet-icon-currency").click(function(){
             let d = editor.deepCopyFlowData(Store.flowdata);//取数据
 
-            _this.updateFormat(d, "ct", "¥ #.00");
+            _this.updateFormat(d, "ct", "$ #,##0.00");
         });
 
         //百分比
@@ -446,7 +485,9 @@ const menuButton = {
             const locale_defaultFmt = _locale.defaultFmt;
 
             let menuButtonId = $(this).attr("id")+"-menuButton";
+            console.log(menuButtonId)
             let $menuButton = $("#" + menuButtonId);
+            debugger
             
             if($menuButton.length == 0){
                 let itemdata = locale_defaultFmt;

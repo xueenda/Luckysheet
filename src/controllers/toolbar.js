@@ -5,6 +5,9 @@ import { getObjType, camel2split } from '../utils/util';
 
 // 默认的工具栏按钮
 export const defaultToolbar = [
+    'file',
+    '|',
+
     'undo',
     'redo',
     'paintFormat',
@@ -61,6 +64,7 @@ export const defaultToolbar = [
 
 // 工具栏按钮 id 关系
 export const toolbarIdMap = {
+    file: '#luckysheet-icon-file',
     undo: '#luckysheet-icon-undo', //Undo redo
     redo: '#luckysheet-icon-redo',
     paintFormat: ['#luckysheet-icon-paintformat'], //Format brush
@@ -106,6 +110,22 @@ export function createToolbarHtml() {
     const fontarray = locale().fontarray;
     const defaultFmtArray = locale().defaultFmt;
     const htmlMap = {
+        file: `<div class="luckysheet-toolbar-select luckysheet-toolbar-menu-button luckysheet-inline-block" data-tips="${toolbar.file}"
+        id="luckysheet-icon-file" role="button" style="user-select: none;">
+            <div class="luckysheet-toolbar-menu-button-outer-box luckysheet-inline-block"
+            style="user-select: none;">
+                <div class="luckysheet-toolbar-menu-button-inner-box luckysheet-inline-block"
+                style="user-select: none;">
+                    <div class="luckysheet-toolbar-menu-button-caption luckysheet-inline-block"
+                    style="user-select: none;">
+                        File
+                    </div>
+                    <div class="luckysheet-toolbar-menu-button-dropdown luckysheet-inline-block iconfont luckysheet-iconfont-xiayige"
+                    style="user-select: none;">
+                    </div>
+                </div>
+            </div>
+        </div>`,
         undo: `<div class="luckysheet-toolbar-button luckysheet-inline-block disabled" data-tips="${toolbar.undo}"
         id="luckysheet-icon-undo" role="button" style="user-select: none;">
             <div class="luckysheet-toolbar-button-outer-box luckysheet-inline-block"
@@ -154,10 +174,8 @@ export function createToolbarHtml() {
             style="user-select: none;">
                 <div class="luckysheet-toolbar-button-inner-box luckysheet-inline-block"
                 style="user-select: none;">
-                    <div class="luckysheet-icon luckysheet-inline-block " style="user-select: none;">
-                        <div aria-hidden="true" class="luckysheet-icon-img-container luckysheet-icon-img iconfont luckysheet-iconfont-jine"
-                        style="user-select: none;">
-                        </div>
+                    <div class="luckysheet-icon luckysheet-inline-block " style="user-select: none; font-size: 15px">
+                    $
                     </div>
                 </div>
             </div>
