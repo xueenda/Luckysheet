@@ -141,7 +141,7 @@ const menuButton = {
                     luckysheetContainerFocus();
 
                     let $t = $(this), itemvalue = $t.attr("itemvalue"),itemname = $t.attr("itemname");
-                    const event = new CustomEvent('fileOperation', {'detail': itemvalue})
+                    const event = new CustomEvent('FileOperation', {'detail': itemvalue})
                     window.dispatchEvent(event);
                 });
             }

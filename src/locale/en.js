@@ -6091,15 +6091,15 @@ export default {
         CFAFrancBEAC:'CFA Franc BEAC'
     },
     defaultFile:[
-        { "text": 'New', "value": "newFile", "example": "" },
+        { "text": 'New', "value": "NewFile", "example": "" },
         { "text": "", "value": "split", "example": "" },
         // { "text": 'Open', "value": "openFromServer", "example": "" },
-        { "text": 'Open from Local', "value": "openFromLocal", "example": "" },
+        { "text": 'Open from Local', "value": "OpenFromLocal", "example": "" },
         { "text": "", "value": "split", "example": "" },
         // { "text": 'Save', "value": "saveToServer", "example": "" },
-        { "text": 'Save to Local', "value": "saveToLocale", "example": "" },
+        { "text": 'Save to Local', "value": "SaveToLocale", "example": "" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Share', "value": "share", "example": "" }
+        { "text": 'Share', "value": "Share", "example": "" }
     ],
     defaultFmt:[
         { "text": 'Automatic', "value": "General", "example": "" },
