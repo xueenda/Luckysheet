@@ -13,4 +13,5 @@ if(window.addEventListener && (navigator.userAgent.indexOf("Firefox") > 0)){
 // use esbuild,bundle iife format
 module.exports =  luckysheet
 
-window.addEventListener("fileOperation", console.log)
+// window.addEventListener("fileOperation", console.log)
+// window.addEventListener("ShowScriptEditor", console.log)

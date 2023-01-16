@@ -5045,6 +5045,10 @@ export default function luckysheetHandler() {
         event.stopPropagation();
     });
 
+    // Show Script Editor
+    $("#luckysheet-icon-script").click(function (event) {
+        window.dispatchEvent(new Event('ShowScriptEditor'));
+    });
 
     //回退 重做 按钮
     $("#luckysheet-icon-undo").click(function (event) {

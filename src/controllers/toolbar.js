@@ -6,6 +6,7 @@ import { getObjType, camel2split } from '../utils/util';
 // 默认的工具栏按钮
 export const defaultToolbar = [
     'file',
+    'script',
     '|',
 
     'undo',
@@ -65,6 +66,7 @@ export const defaultToolbar = [
 // 工具栏按钮 id 关系
 export const toolbarIdMap = {
     file: '#luckysheet-icon-file',
+    script: '#luckysheet-icon-script',
     undo: '#luckysheet-icon-undo', //Undo redo
     redo: '#luckysheet-icon-redo',
     paintFormat: ['#luckysheet-icon-paintformat'], //Format brush
@@ -122,6 +124,20 @@ export function createToolbarHtml() {
                     </div>
                     <div class="luckysheet-toolbar-menu-button-dropdown luckysheet-inline-block iconfont luckysheet-iconfont-xiayige"
                     style="user-select: none;">
+                    </div>
+                </div>
+            </div>
+        </div>`,
+        script: `<div class="luckysheet-toolbar-button luckysheet-inline-block" data-tips="${toolbar.script}"
+        id="luckysheet-icon-script" role="button" style="user-select: none;">
+            <div class="luckysheet-toolbar-button-outer-box luckysheet-inline-block"
+            style="user-select: none;">
+                <div class="luckysheet-toolbar-button-inner-box luckysheet-inline-block"
+                style="user-select: none;">
+                    <div class="luckysheet-icon luckysheet-inline-block " style="user-select: none;">
+                        <div aria-hidden="true" class="luckysheet-icon-img-container luckysheet-icon-img luckysheet-icon-undo iconfont luckysheet-iconfont-bianji"
+                        style="user-select: none;">
+                        </div>
                     </div>
                 </div>
             </div>

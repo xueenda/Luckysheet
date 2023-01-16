@@ -5792,6 +5792,7 @@ export default {
     },
     toolbar: {
         file: 'File Operations',
+        script: 'Script Editor',
         undo: 'Undo',
         redo: 'Redo',
         paintFormat: 'Paint format',
