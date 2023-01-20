@@ -487,7 +487,6 @@ const menuButton = {
             let menuButtonId = $(this).attr("id")+"-menuButton";
             console.log(menuButtonId)
             let $menuButton = $("#" + menuButtonId);
-            debugger
             
             if($menuButton.length == 0){
                 let itemdata = locale_defaultFmt;
