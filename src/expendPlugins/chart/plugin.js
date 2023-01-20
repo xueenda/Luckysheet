@@ -1181,7 +1181,7 @@ function createLuckyChart(width, height, left, top) {
 
     let { render, chart_json } = chartInfo.createChart($(`#${chart_id_c}`).children('.luckysheet-modal-dialog-content')[0], chartData, chart_id, rangeArray, rangeTxt)
     // chartInfo.currentChart = chart_json.chartOptions
-    console.dir(JSON.stringify(chart_json))
+    // console.dir(JSON.stringify(chart_json))
 
     width = width ? width : 400
     height = height ? height : 250
@@ -1204,14 +1204,8 @@ function createLuckyChart(width, height, left, top) {
     if (!sheetFile.chart) {
         sheetFile.chart = [];
     }
-    sheetFile.chart.push({
-        chart_id,
-        width,
-        height,
-        left,
-        top,
-        sheetIndex: sheetFile.index
-    })
+
+    sheetFile.chart.push(chart_json)
 
     //处理区域高亮框参数，当前页中，只有当前的图表的needRangShow为true,其他为false
     showNeedRangeShow(chart_id);
