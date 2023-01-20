@@ -1205,7 +1205,17 @@ function createLuckyChart(width, height, left, top) {
         sheetFile.chart = [];
     }
 
-    sheetFile.chart.push(chart_json)
+    sheetFile.chart.push({
+        chart_id,
+        width,
+        height,
+        left,
+        top,
+        sheetIndex: sheetFile.index,
+        isShow: true,
+        needRangeShow: false,
+        ...chart_json
+    })
 
     //处理区域高亮框参数，当前页中，只有当前的图表的needRangShow为true,其他为false
     showNeedRangeShow(chart_id);
