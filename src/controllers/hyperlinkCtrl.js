@@ -131,7 +131,7 @@ const hyperlinkCtrl = {
                     linkAddress = 'https://' + linkAddress;
                 }
 
-                if(!/^http[s]?:\/\/([\w\-\.]+)+[\w-]*([\w\-\.\/\?%&=]+)?$/ig.test(linkAddress)){
+                if(!/^http[s]?:\/\/([\w\-\.]+)+[\w-]*(?::\d+)?([\w\-\.\/\?%&=]+)?$/ig.test(linkAddress)){
                     tooltip.info('<i class="fa fa-exclamation-triangle"></i>', hyperlinkText.tooltipInfo1);
                     return;
                 }
@@ -321,7 +321,7 @@ const hyperlinkCtrl = {
 
         let html = `<div id="luckysheet-hyperlink-overshow" style="background:#fff;padding:5px 10px;border:1px solid #000;box-shadow:2px 2px #999;position:absolute;left:${col_pre}px;top:${row + 5}px;z-index:100;">
                         <div>${linkTooltip}</div>
-                        <div>单击鼠标可以追踪</div>
+                        <div>Follow Link</div>
                     </div>`;
 
         $(html).appendTo($("#luckysheet-cell-main"));
