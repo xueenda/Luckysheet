@@ -5839,6 +5839,7 @@ export default {
         chart: 'Chart',
         screenshot: 'Screenshot',
         splitColumn: 'Split text',
+        insertButton: 'Insert button',
         insertImage: 'Insert image',
         insertLink: 'Insert link',
         dataVerification: 'Data verification',
