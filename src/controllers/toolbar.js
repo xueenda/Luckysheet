@@ -44,6 +44,7 @@ export const defaultToolbar = [
     'textRotateMode',
     '|',
 
+    'button',
     'image',
     'link',
     'chart',
@@ -89,6 +90,7 @@ export const toolbarIdMap = {
     verticalAlignMode: ['#luckysheet-icon-valign', '#luckysheet-icon-valign-menu'], //'Vertical alignment'
     textWrapMode: ['#luckysheet-icon-textwrap', '#luckysheet-icon-textwrap-menu'], //'Wrap mode'
     textRotateMode: ['#luckysheet-icon-rotation', '#luckysheet-icon-rotation-menu'], //'Text Rotation Mode'
+    button: '#luckysheet-insertBtn-btn-title', //'Insert Button'
     image: '#luckysheet-insertImg-btn-title', //'Insert link'
     link: '#luckysheet-insertLink-btn-title', //'Insert picture'
     chart: '#luckysheet-chart-btn-title', //'chart' (the icon is hidden, but if the chart plugin is configured, you can still create a new chart by right click)
@@ -580,6 +582,23 @@ export function createToolbarHtml() {
                 </div>
             </div>
         </div>`, //'Text Rotation Mode'
+        button: `<div class="luckysheet-toolbar-button-split-left luckysheet-toolbar-button luckysheet-inline-block"
+        data-tips="${toolbar.insertButton}" id="luckysheet-insertBtn-btn-title" role="button" style="user-select: none;">
+            <div class="luckysheet-toolbar-button-outer-box luckysheet-inline-block"
+            style="user-select: none;">
+                <div class="luckysheet-toolbar-menu-button-inner-box luckysheet-inline-block"
+                style="user-select: none;">
+                    <div class="luckysheet-toolbar-menu-button-caption luckysheet-inline-block"
+                    style="user-select: none;">
+                        <div class="luckysheet-icon luckysheet-inline-block " style="user-select: none;">
+                            <div aria-hidden="true" class="luckysheet-icon-img-container luckysheet-icon-img luckysheet-icon-rotation-none iconfont luckysheet-iconfont-shujuku"
+                            style="user-select: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`, // 'Insert picture'
         image: `<div class="luckysheet-toolbar-button-split-left luckysheet-toolbar-button luckysheet-inline-block"
         data-tips="${toolbar.insertImage}" id="luckysheet-insertImg-btn-title" role="button" style="user-select: none;">
             <div class="luckysheet-toolbar-button-outer-box luckysheet-inline-block"

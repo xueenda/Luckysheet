@@ -17,6 +17,7 @@ import luckysheetConfigsetting from './luckysheetConfigsetting';
 import pivotTable from './pivotTable';
 import luckysheetsizeauto from './resize';
 import luckysheetPostil from './postil';
+import buttonCtrl from './buttonCtrl';
 import imageCtrl from './imageCtrl';
 import dataVerificationCtrl from './dataVerificationCtrl';
 import hyperlinkCtrl from './hyperlinkCtrl';
@@ -1018,6 +1019,12 @@ const sheetmanage = {
 
         //批注
         luckysheetPostil.buildAllPs(Store.flowdata);
+
+        //Button
+        buttonCtrl.currentBtnId = null;
+        buttonCtrl.buttons = file.buttons;
+        buttonCtrl.allButtonsShow();
+        buttonCtrl.init();
 
         //图片
         imageCtrl.currentImgId = null;

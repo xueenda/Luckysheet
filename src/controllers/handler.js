@@ -4,6 +4,7 @@ import luckysheetFreezen from './freezen';
 import pivotTable from './pivotTable';
 import luckysheetDropCell from './dropCell';
 import luckysheetPostil from './postil';
+import buttonCtrl from './buttonCtrl';
 import imageCtrl from './imageCtrl';
 import hyperlinkCtrl from './hyperlinkCtrl';
 import dataVerificationCtrl from './dataVerificationCtrl';
@@ -4859,6 +4860,18 @@ export default function luckysheetHandler() {
 
         splitColumn.createDialog();
         splitColumn.init();
+    });
+
+    $("#luckysheet-insertBtn-btn-title").click(function () {
+        // *如果禁止前台编辑，则中止下一步操作
+        if (!checkIsAllowEdit()) {
+            tooltip.info("", locale().pivotTable.errorNotAllowEdit);
+            return
+        }
+        if(!checkProtectionAuthorityNormal(Store.currentSheetIndex, "editObjects")){
+            return;
+        }
+        buttonCtrl.insertBtn();
     });
 
     //菜单栏 插入图片按钮
