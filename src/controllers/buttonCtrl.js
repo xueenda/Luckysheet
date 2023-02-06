@@ -108,16 +108,16 @@ const buttonCtrl = {
 
         let borderWidth = btnItem.border.width;
 
-        return  `<div id="${id}" class="luckysheet-modal-dialog-button" style="width:${width}px;height:${height}px;padding:0;position:${position};left:${left}px;top:${top}px;z-index:200;">
-                    <button onclick="${onclick}" style="position:absolute;left:${-btnItem.crop.offsetLeft * Store.zoomRatio}px;top:${-btnItem.crop.offsetTop * Store.zoomRatio}px; z-index:200; cursor: pointer;">Run</button>
-                </div>`;
-
-        // return  `<div id="${id}" class="luckysheet-modal-dialog luckysheet-modal-dialog-button" style="width:${width}px;height:${height}px;padding:0;position:${position};left:${left}px;top:${top}px;z-index:200;">
-        //             <div class="luckysheet-modal-dialog-content" style="width:100%;height:100%;overflow:hidden;position:relative;">
-        //                 <button onclick="${onclick}" style="position:absolute;width:${btnItem.default.width * Store.zoomRatio}px;height:${btnItem.default.height * Store.zoomRatio}px;left:${-btnItem.crop.offsetLeft * Store.zoomRatio}px;top:${-btnItem.crop.offsetTop * Store.zoomRatio}px; z-index:200; cursor: pointer;">Run</button>
-        //             </div>
-        //             <div class="luckysheet-modal-dialog-border" style="border:${borderWidth}px ${btnItem.border.style} ${btnItem.border.color};border-radius:${btnItem.border.radius * Store.zoomRatio}px;position:absolute;left:${-borderWidth}px;right:${-borderWidth}px;top:${-borderWidth}px;bottom:${-borderWidth}px;"></div>
+        // return  `<div id="${id}" class="luckysheet-modal-dialog-button" style="width:${width}px;height:${height}px;padding:0;position:${position};left:${left}px;top:${top}px;z-index:200;">
+        //             <button onclick="${onclick}" style="position:absolute;left:${-btnItem.crop.offsetLeft * Store.zoomRatio}px;top:${-btnItem.crop.offsetTop * Store.zoomRatio}px; z-index:200; cursor: pointer;">Run</button>
         //         </div>`;
+
+        return  `<div id="${id}" class="luckysheet-modal-dialog luckysheet-modal-dialog-button" style="width:${width}px;height:${height}px;padding:0;position:${position};left:${left}px;top:${top}px;z-index:200;">
+                    <div class="luckysheet-modal-dialog-content" style="width:100%;height:100%;overflow:hidden;position:relative;">
+                        <button onclick="${onclick}" style="position:absolute;width:${btnItem.default.width * Store.zoomRatio}px;height:${btnItem.default.height * Store.zoomRatio}px;left:${-btnItem.crop.offsetLeft * Store.zoomRatio}px;top:${-btnItem.crop.offsetTop * Store.zoomRatio}px; z-index:200; cursor: pointer;">Run</button>
+                    </div>
+                    <div class="luckysheet-modal-dialog-border" style="border:${borderWidth}px ${btnItem.border.style} ${btnItem.border.color};border-radius:${btnItem.border.radius * Store.zoomRatio}px;position:absolute;left:${-borderWidth}px;right:${-borderWidth}px;top:${-borderWidth}px;bottom:${-borderWidth}px;"></div>
+                </div>`;
     },
     getSliderHtml: function() {
         let imageText = locale().imageText;
@@ -342,8 +342,7 @@ const buttonCtrl = {
         });
 
         //image active
-        $("#luckysheet-button-showBoxs").on("dblclick", ".luckysheet-modal-dialog-button", function(e) {
-            
+        $("#luckysheet-button-showBoxs").on("click", ".luckysheet-modal-dialog-button", function(e) {
 
             if(!checkProtectionAuthorityNormal(Store.currentSheetIndex, "editObjects",false)){
                 return;
