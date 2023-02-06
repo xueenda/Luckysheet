@@ -6097,10 +6097,18 @@ export default {
         // { "text": 'Open', "value": "openFromServer", "example": "" },
         { "text": 'Open from Local', "value": "OpenFromLocal", "example": "" },
         { "text": "", "value": "split", "example": "" },
-        // { "text": 'Save', "value": "saveToServer", "example": "" },
+        { "text": 'Save', "value": "saveToServer", "example": "" },
         { "text": 'Save to Local', "value": "SaveToLocale", "example": "" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Share', "value": "Share", "example": "" }
+        { "text": 'Fork', "value": "ForkSheet", "example": "" },
+        { "text": 'Add to Favorite', "value": "AddToFavorite", "example": "" },
+        { "text": "", "value": "split", "example": "" },
+        { "text": 'Import from Excel', "value": "ImportFromExcel", "example": "" },
+        { "text": "", "value": "split", "example": "" },
+        { "text": 'Export to CSV', "value": "ExportToCSV", "example": "" },
+        { "text": "", "value": "split", "example": "" },
+        { "text": 'Mine', "value": "Mine", "example": "" }, // Including Created by me, favorites, recent opened
+        { "text": 'Help', "value": "Help", "example": "" },
     ],
     defaultFmt:[
         { "text": 'Automatic', "value": "General", "example": "" },
