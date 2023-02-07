@@ -109,7 +109,6 @@ export function getCellValue(row, column, options = {}) {
  * @param {Function} options.success 操作结束的回调函数
  */
 export function setCellValue(row, column, value, options = {}) {
-
     let curv = Store.flowdata[row][column];
 
     // Store old value for hook function
@@ -228,7 +227,7 @@ export function setCellValue(row, column, value, options = {}) {
     /* cell更新后触发  */
     setTimeout(() => {
         // Hook function
-        method.createHookFunction("cellUpdated", row, column, JSON.parse(oldValue), Store.flowdata[row][column], isRefresh);
+        // method.createHookFunction("cellUpdated", row, column, JSON.parse(oldValue), Store.flowdata[row][column], isRefresh);
     }, 0);
 
     if(file.index == Store.currentSheetIndex && isRefresh){
@@ -529,6 +528,7 @@ export function replace(content, replaceContent, options = {}) {
         setCellValue(cell.row, cell.column, replaceContent, {order: order, isRefresh: false});
     })
 
+    
     let fileData = $.extend(true, [], file.data);
     file.data.length = 0;
     file.data.push(...sheetData);
@@ -2837,6 +2837,8 @@ export function setRangeValue(data, options = {}) {
 
     if (typeof range === 'string' && formula.iscelldata(range)) {
         range = formula.getcellrange(range)
+        // if(range.sheetIndex)
+        order = parseInt(range.sheetIndex || order)
     }
 
     let rowCount = range.row[1] - range.row[0] + 1,
@@ -2862,8 +2864,9 @@ export function setRangeValue(data, options = {}) {
     }
 
     let fileData = $.extend(true, [], file.data);
-    file.data.length = 0;
-    file.data.push(...sheetData);
+    // Comment out these 2 lines, it doesn't make sense
+    // file.data.length = 0;
+    // file.data.push(...sheetData);
 
     if(file.index == Store.currentSheetIndex){
         jfrefreshgrid(fileData, [{
