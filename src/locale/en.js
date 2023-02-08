@@ -6097,7 +6097,7 @@ export default {
         // { "text": 'Open', "value": "openFromServer", "example": "" },
         { "text": 'Open from Local', "value": "OpenFromLocal", "example": "" },
         { "text": "", "value": "split", "example": "" },
-        { "text": 'Save', "value": "saveToServer", "example": "" },
+        { "text": 'Save', "value": "SaveToServer", "example": "" },
         { "text": 'Save to Local', "value": "SaveToLocale", "example": "" },
         { "text": "", "value": "split", "example": "" },
         { "text": 'Fork', "value": "ForkSheet", "example": "" },
